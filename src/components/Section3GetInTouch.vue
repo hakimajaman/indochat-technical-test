@@ -1,5 +1,5 @@
 <template>
-  <section class="section-container">
+  <section class="section-container" id="feedback">
     <div class="section-title">
       <font-awesome-icon :icon="['fas', 'clipboard']" class="font-awesome" />
       <h1>Get in touch</h1>
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="section-feedback">
-      <div class="feedback-maps">
+      <div class="feedback-maps" style="z-index: 0">
         <l-map
           v-model="zoom"
           v-model:zoom="zoom"

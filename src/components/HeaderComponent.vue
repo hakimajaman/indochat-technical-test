@@ -2,9 +2,27 @@
   <div class="header-container">
     <div class="logo"><img src="../assets/logo.png" /></div>
     <nav>
-      <a>Home</a>
-      <a>Discover</a>
-      <a>Register</a>
+      <router-link
+        :class="{
+          'a-active': $route.hash === '#home' || $route.hash.length < 1,
+        }"
+        :to="{ name: 'LandingPage', hash: '#home' }"
+        >Home</router-link
+      >
+      <router-link
+        :class="{
+          'a-active': $route.hash === '#discover',
+        }"
+        :to="{ name: 'LandingPage', hash: '#discover' }"
+        >Discover</router-link
+      >
+      <router-link
+        :class="{
+          'a-active': $route.hash === '#feedback',
+        }"
+        :to="{ name: 'LandingPage', hash: '#feedback' }"
+        >Register</router-link
+      >
       <button>
         <font-awesome-icon :icon="['fas', 'search']" />
       </button>
@@ -13,10 +31,9 @@
 </template>
 
 <script>
-// import Logo from '../assets/logo.png'
-// export default {
-
-// }
+export default {
+  data() {},
+};
 </script>
 
 <style scoped lang="scss">
@@ -27,10 +44,14 @@
   -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  position: fixed;
+  width: 98%;
+  z-index: 99;
+  align-items: center;
 
   nav {
     margin-left: auto;
-    margin-top: 5px;
+    margin-bottom: 5px;
 
     a {
       margin-right: 10px;
@@ -38,10 +59,7 @@
       border-radius: 100px;
       color: #0c0c0c;
       cursor: pointer;
-
-      &:first-child {
-        background: #e0e1e0;
-      }
+      text-decoration: none;
 
       &:hover {
         background: #e0e1e0;
@@ -55,6 +73,9 @@
       color: grey;
     }
   }
+}
+.a-active {
+  background: #e0e1e0;
 }
 .logo {
   background: #ffffff;

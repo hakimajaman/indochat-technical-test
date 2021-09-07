@@ -1,5 +1,5 @@
 <template>
-  <section class="section-container">
+  <section class="section-container" id="discover">
     <div class="section-opt">
       <font-awesome-icon :icon="['fas', 'chart-line']" class="font-awesome" />
       <h1>DISCOVER</h1>

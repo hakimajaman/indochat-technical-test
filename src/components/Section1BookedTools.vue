@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="home">
     <div class="section-image">
       <div class="left-section">
         <div class="left-section-1">
@@ -30,7 +30,7 @@
 <style scoped lang="scss">
 .section-image {
   background-color: #f3f6f4;
-  height: 65vh;
+  height: 600px;
   display: flex;
   align-items: center;
   .left-section {
