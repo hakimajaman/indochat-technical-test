@@ -1,30 +1,29 @@
 <template>
-  <div id="nav">
+  <header-component />
+  <section-1-component />
+  <!-- <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <router-view />
+  <router-view /> -->
 </template>
 
+<script>
+import HeaderComponent from "./components/HeaderComponent.vue";
+import Section1Component from "./components/Section1Component.vue";
+export default {
+  components: {
+    HeaderComponent,
+    Section1Component,
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: #ffff;
 }
 </style>
