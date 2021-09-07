@@ -1,12 +1,16 @@
 <template>
-  <section class="section-container">
+  <section>
     <div class="section-image">
       <div class="left-section">
         <div class="left-section-1">
           <span>Booked Tool</span>
           <span>enables you to</span>
+          <p>create Interactive Advertisement</p>
+          <button>What is it?</button>
         </div>
-        <p>create Interactive Advertisement</p>
+      </div>
+      <div class="right-section">
+        <img src="https://picsum.photos/id/26/4209/2769" alt="picsum-image" />
       </div>
     </div>
     <div class="booked-container">
@@ -26,8 +30,9 @@
 <style scoped lang="scss">
 .section-image {
   background-color: #f3f6f4;
-  height: 50vh;
+  height: 65vh;
   display: flex;
+  align-items: center;
   .left-section {
     background-image: url("../assets/laptop-glasses.jpg");
     background-position: center;
@@ -35,19 +40,45 @@
     background-size: cover;
     height: 100%;
     width: 50%;
-    text-align: right;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     &-1 {
+      margin-left: auto;
+      margin-right: 15%;
       span {
         margin: 0;
         margin-right: 5px;
         &:first-child {
           font-size: 30px;
-          font-weight: 500;
+          font-weight: 600;
         }
       }
+      p {
+        margin-top: 0;
+        margin-bottom: 12px;
+      }
+      button {
+        height: 45px;
+        width: 140px;
+        background-color: #428ecb;
+        border: 1px solid #428ecb;
+        border-radius: 5px;
+        color: #ffff;
+        font-size: 18px;
+      }
     }
-    p {
-      margin: 0;
+  }
+  .right-section {
+    //     background: red;
+    position: absolute;
+    width: 53%;
+    height: 65vh;
+    right: 0;
+    img {
+      width: 100%;
+      height: 85%;
     }
   }
 }
