@@ -26,6 +26,9 @@
       <button>
         <font-awesome-icon :icon="['fas', 'search']" />
       </button>
+      <button class="burger">
+        <font-awesome-icon :icon="['fas', 'grip-lines']" />
+      </button>
     </nav>
   </div>
 </template>
@@ -40,17 +43,18 @@ export default {
 .header-container {
   display: flex;
   background: #f6f8f8;
-  padding: 10px 25px;
+  padding: 10px 0px 10px 0px;
   -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   position: fixed;
-  width: 98%;
   z-index: 99;
   align-items: center;
+  width: 100%;
 
   nav {
     margin-left: auto;
+    margin-right: 25px;
     margin-bottom: 5px;
 
     a {
@@ -88,8 +92,16 @@ export default {
   -webkit-box-shadow: 0.5px 2px 2px #ccc9c8;
   -moz-box-shadow: 0.5px 2px 2px #ccc9c8;
   box-shadow: 0.5px 2px 2px #ccc9c8;
+  margin-left: 25px;
   img {
     width: 20px;
+  }
+}
+.burger {
+  display: none;
+  @media only screen and (max-width: 767px) {
+    margin-left: 25px;
+    display: inline;
   }
 }
 </style>

@@ -7,9 +7,10 @@ import {
   faSearch,
   faChartLine,
   faClipboard,
+  faGripLines,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faSearch, faChartLine, faClipboard);
+library.add(faSearch, faChartLine, faClipboard, faGripLines);
 
 createApp(App)
   .component("font-awesome-icon", FontAwesomeIcon)

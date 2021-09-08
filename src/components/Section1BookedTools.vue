@@ -1,5 +1,5 @@
 <template>
-  <section id="home">
+  <section class="section-container" id="home">
     <div class="section-image">
       <div class="left-section">
         <div class="left-section-1">
@@ -33,6 +33,10 @@
   height: 600px;
   display: flex;
   align-items: center;
+  @media only screen and (max-width: 991px) {
+    display: block;
+    height: 100%;
+  }
   .left-section {
     background-image: url("../assets/laptop-glasses.jpg");
     background-position: center;
@@ -69,9 +73,21 @@
         font-size: 18px;
       }
     }
+    @media only screen and (max-width: 991px) {
+      width: 100%;
+      height: 500px;
+    }
+    @media only screen and (max-width: 767px) {
+      &-1 {
+        background-color: #f7f7f7;
+        margin-left: 10px;
+        border-radius: 10px;
+        padding: 5px;
+        text-align: center;
+      }
+    }
   }
   .right-section {
-    //     background: red;
     position: absolute;
     width: 53%;
     height: 65vh;
@@ -79,6 +95,19 @@
     img {
       width: 100%;
       height: 85%;
+    }
+    @media only screen and (max-width: 991px) {
+      position: relative;
+      // display: flex;
+      display: none;
+      align-items: center;
+      img {
+        width: 80%;
+        height: 300px;
+        border-radius: 10px;
+        margin-left: auto;
+        // margin-right: 20px;
+      }
     }
   }
 }
@@ -88,6 +117,10 @@
   align-items: center;
   justify-content: center;
   padding: 50px 0px;
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    text-align: center;
+  }
   .booked-text {
     h3 {
       margin: 0;
@@ -98,6 +131,11 @@
       font-size: 32px;
     }
     margin-right: 50px;
+    @media only screen and (max-width: 991px) {
+      h1 {
+        font-size: 28px;
+      }
+    }
   }
   .booked-input {
     input {
@@ -110,6 +148,9 @@
       -webkit-box-shadow: 0 rgba(70, 74, 80, 0.3);
       -moz-box-shadow: 0 rgba(70, 74, 80, 0.3);
       box-shadow: 0 rgba(70, 74, 80, 0.3);
+      @media only screen and (max-width: 991px) {
+        width: 150px;
+      }
     }
     button {
       height: 40px;
@@ -118,6 +159,10 @@
       border: 1px solid #428ecb;
       border-radius: 5px;
       color: #ffff;
+    }
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+      text-align: center;
     }
   }
 }

@@ -180,8 +180,8 @@ export default {
     height: 40px;
     width: 100%;
     font-size: 18px;
-    margin-right: 10px;
-    padding: 0px 10px;
+    // margin-right: 10px;
+    padding: 0px 0px 0px 10px;
     outline: none;
     border: 1px solid #d5d5d5;
     border-radius: 5px;
@@ -196,11 +196,17 @@ export default {
 }
 .feedback-maps {
   width: 400px;
+  @media only screen and (max-width: 991px) {
+    width: 300px;
+  }
 }
 .feedback-input {
   background: white;
   width: 400px;
   padding: 0px 20px 20px 40px;
+  @media only screen and (max-width: 991px) {
+    width: 300px;
+  }
   form {
     display: flex;
     flex-direction: column;
