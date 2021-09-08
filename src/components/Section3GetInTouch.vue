@@ -8,11 +8,12 @@
         reach us..
       </h1>
       <div class="section-search">
+        <font-awesome-icon class="awesome-search" :icon="['fas', 'search']" />
         <input placeholder="Search..." />
       </div>
     </div>
     <div class="section-feedback">
-      <div class="feedback-maps" style="z-index: 0">
+      <div class="feedback-maps">
         <l-map
           v-model="zoom"
           v-model:zoom="zoom"
@@ -176,18 +177,32 @@ export default {
 }
 .section-search {
   width: 100%;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0px 10px;
+  outline: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 rgba(70, 74, 80, 0.3);
+  -moz-box-shadow: 0 rgba(70, 74, 80, 0.3);
+  box-shadow: 0 rgba(70, 74, 80, 0.3);
+  border: 1px solid #d6d6d6;
+  background: white;
+  transition: 0.5s all;
   input {
     height: 40px;
     width: 100%;
-    font-size: 18px;
-    // margin-right: 10px;
-    padding: 0px 0px 0px 10px;
+    height: 30px;
+    background: transparent;
     outline: none;
-    border: 1px solid #d5d5d5;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 rgba(70, 74, 80, 0.3);
-    -moz-box-shadow: 0 rgba(70, 74, 80, 0.3);
-    box-shadow: 0 rgba(70, 74, 80, 0.3);
+    border: 0;
+    margin-left: 10px;
+    &::placeholder {
+      color: #a9a9a8;
+    }
+  }
+  .awesome-search {
+    color: #a9a9a8;
   }
 }
 .section-feedback {
@@ -196,11 +211,13 @@ export default {
 }
 .feedback-maps {
   width: 400px;
+  z-index: 0;
   @media only screen and (max-width: 991px) {
     width: 300px;
   }
 }
 .feedback-input {
+  // display: none;
   background: white;
   width: 400px;
   padding: 0px 20px 20px 40px;
@@ -244,6 +261,13 @@ export default {
       border: 1px solid #428ecb;
       border-radius: 5px;
       color: #ffff;
+      cursor: pointer;
+      &:hover {
+        background-color: #3679af;
+      }
+      &:active {
+        background-color: #326fa2;
+      }
     }
   }
   .feedback-name {

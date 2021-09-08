@@ -71,6 +71,13 @@
         border-radius: 5px;
         color: #ffff;
         font-size: 18px;
+        cursor: pointer;
+        &:hover {
+          background-color: #3679af;
+        }
+        &:active {
+          background-color: #326fa2;
+        }
       }
     }
     @media only screen and (max-width: 991px) {
@@ -136,6 +143,10 @@
         font-size: 28px;
       }
     }
+    @media only screen and (max-width: 767px) {
+      margin-right: 0px;
+      margin-bottom: 10px;
+    }
   }
   .booked-input {
     input {
@@ -159,10 +170,27 @@
       border: 1px solid #428ecb;
       border-radius: 5px;
       color: #ffff;
+      cursor: pointer;
+      &:hover {
+        background-color: #3679af;
+      }
+      &:active {
+        background-color: #326fa2;
+      }
     }
     @media only screen and (max-width: 767px) {
+      display: flex;
       flex-direction: column;
       text-align: center;
+      align-items: center;
+      input {
+        margin-right: 0px;
+        margin-bottom: 10px;
+        width: 250px;
+      }
+      button {
+        width: 270px;
+      }
     }
   }
 }
