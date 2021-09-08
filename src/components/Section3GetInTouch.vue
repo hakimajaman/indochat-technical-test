@@ -18,7 +18,6 @@
           v-model="zoom"
           v-model:zoom="zoom"
           :center="[47.41322, -1.219482]"
-          @move="log('move')"
         >
           <l-tile-layer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -208,6 +207,10 @@ export default {
 .section-feedback {
   display: flex;
   justify-content: center;
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .feedback-maps {
   width: 400px;
@@ -215,14 +218,20 @@ export default {
   @media only screen and (max-width: 991px) {
     width: 300px;
   }
+  @media only screen and (max-width: 767px) {
+    width: 300px;
+    height: 300px;
+  }
 }
 .feedback-input {
-  // display: none;
   background: white;
   width: 400px;
   padding: 0px 20px 20px 40px;
   @media only screen and (max-width: 991px) {
     width: 300px;
+  }
+  @media only screen and (max-width: 767px) {
+    width: 240px;
   }
   form {
     display: flex;

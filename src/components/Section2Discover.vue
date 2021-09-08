@@ -1,43 +1,47 @@
 <template>
-  <section class="section-container" id="discover">
-    <div class="section-title">
-      <font-awesome-icon :icon="['fas', 'chart-line']" class="font-awesome" />
-      <h1>DISCOVER</h1>
-      <h1>BOOKED TOOL</h1>
-    </div>
-    <img class="image-opt" :src="nav[choose].image" />
-    <div class="section-nav">
-      <div class="nav-opt">
-        <div
-          v-for="(dat, i) in nav"
-          class="section-opt"
-          :class="{ 'choose-active': choose === i }"
-          :key="i"
-          @click="chooseThis(i)"
-        >
-          <h2>
-            {{ dat.name }}
-          </h2>
+  <section id="discover">
+    <div class="hd-container">
+      <div class="section-title">
+        <font-awesome-icon :icon="['fas', 'chart-line']" class="font-awesome" />
+        <h1>DISCOVER</h1>
+        <h1>BOOKED TOOL</h1>
+      </div>
+      <img class="image-opt" :src="nav[choose].image" />
+      <div class="section-nav">
+        <div class="nav-opt">
+          <div
+            v-for="(dat, i) in nav"
+            class="section-opt"
+            :class="{ 'choose-active': choose === i }"
+            :key="i"
+            @click="chooseThis(i)"
+          >
+            <h2>
+              {{ dat.name }}
+            </h2>
+          </div>
+        </div>
+        <div class="blue-underline" :style="carouselBorderMove"></div>
+      </div>
+      <div class="section-paragraph">
+        <div class="move-wrap" :style="carouselTextMove">
+          <div class="paragraph-slide" v-for="(dat, i) in nav" :key="i">
+            <p>
+              {{ dat.text }}
+            </p>
+          </div>
         </div>
       </div>
-      <div class="blue-underline" :style="carouselBorderMove"></div>
     </div>
-    <div class="section-paragraph">
-      <div class="move-wrap" :style="carouselTextMove">
-        <div class="paragraph-slide" v-for="(dat, i) in nav" :key="i">
-          <p>
-            {{ dat.text }}
-          </p>
-        </div>
+    <div>
+      <div class="mobile-container">
+        <section-2-discover-mobile
+          :nav="nav"
+          :choose="choose"
+          :chooseThis="chooseThis"
+        />
       </div>
     </div>
-  </section>
-  <section class="section-mobile-container">
-    <section-2-discover-mobile
-      :nav="nav"
-      :choose="choose"
-      :chooseThis="chooseThis"
-    />
   </section>
 </template>
 
@@ -58,7 +62,7 @@ export default {
         right: "0",
       },
       carouselBorderMove: {
-        left: "11%",
+        left: "80px",
       },
       nav: [
         {
@@ -89,13 +93,11 @@ export default {
       this.choose = index;
       if (index < 1) {
         this.carouselTextMove.right = 0;
-        this.carouselBorderMove.left = "11%";
+        this.carouselBorderMove.left = "80px";
       } else {
+        let count = 140 * index + 80;
         this.carouselTextMove.right = `${index}00%`;
-        if (index % 2 === 0) {
-          let count = index * 11;
-          this.carouselBorderMove.left = `${count}%`;
-        }
+        this.carouselBorderMove.left = `${count}px`;
       }
     },
   },
@@ -103,7 +105,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.section-container {
+.hd-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,7 +116,7 @@ export default {
     display: none;
   }
 }
-.section-mobile-container {
+.mobile-container {
   display: none;
   @media only screen and (max-width: 767px) {
     display: block;
@@ -149,7 +151,7 @@ export default {
   -o-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
 }
-.section-container img.transparent {
+.hd-container img.transparent {
   opacity: 0;
 }
 .section-nav {
