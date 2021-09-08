@@ -17,5 +17,13 @@ export default {
     Section2Discover,
     Section3GetInTouch,
   },
+  watch: {
+    title: {
+      immediate: true,
+      handler() {
+        document.title = "Booked Main Page";
+      },
+    },
+  },
 };
 </script>
