@@ -34,10 +34,10 @@ jobs:
     #       heroku_api_key: ${{secrets.HEROKU_API_KEY}}
     #       heroku_app_name: "simple-landing-page-booked" #Must be unique in Heroku
     #       heroku_email: "rifqitaufiqulhakim199922@gmail.com"
-    - name: Set up Ruby
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: latest
+    # - name: Set up Ruby
+    #   uses: actions/setup-ruby@v1
+    #   with:
+    #     ruby-version: latest
     - run: apt-get update -qy
     - run: apt-get install rubygems ruby-dev -y
     - run: gem install dpl
