@@ -95,7 +95,7 @@ export default {
         this.carouselTextMove.right = 0;
         this.carouselBorderMove.left = "80px";
       } else {
-        let count = 140 * index + 80;
+        let count = 140 * index + 80 - index;
         this.carouselTextMove.right = `${index}00%`;
         this.carouselBorderMove.left = `${count}px`;
       }
